@@ -1,18 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
-* { box-sizing: border-box; }
-
-html,body { 
-    margin: 0;
-    background: var(--light-grayish-cyan);
- }
-
-body, input, select, button, textarea { 
-    font-family:'Space Mono', monospace;
+* {
+    box-sizing: border-box;
 }
 
-h4{
-    color:var(--dark-grayish-cyan);
+html, body {
+    margin: 0;
+    background: var(--light-grayish-cyan);
+}
+
+body, input, select, button, textarea {
+    font-family: 'Space Mono', monospace;
+}
+
+h4 {
+    color: var(--dark-grayish-cyan);
 }
 
 :root {
@@ -20,12 +22,12 @@ h4{
     --strong-cyan: hsl(172, 67%, 45%);
 
     /* neutral colors */
-    --very-dark-cyan:hsl(183, 100%, 15%);
-    --dark-grayish-cyan:hsl(186, 14%, 43%);
-    --dark-grayish-cyan:hsl(184, 14%, 56%);
-    --light-grayish-cyan:hsl(185, 41%, 84%);
-    --very-light-grayish-cyan:hsl(180, 19%, 93%);
-    --white:  hsl(0, 0%, 100%);
+    --very-dark-cyan: hsl(183, 100%, 15%);
+    --dark-grayish-cyan: hsl(186, 14%, 43%);
+    --dark-grayish-cyan: hsl(184, 14%, 56%);
+    --light-grayish-cyan: hsl(185, 41%, 84%);
+    --very-light-grayish-cyan: hsl(180, 19%, 93%);
+    --white: hsl(0, 0%, 100%);
 
 }
 
@@ -54,16 +56,17 @@ h4{
     justify-content: space-around;
 }
 
-.container .options .bill .input-icone , .container .options .number-peoples .input-icone{
+.container .options .bill .input-icone, .container .options .number-peoples .input-icone {
     position: relative;
 }
 
-.container .options .bill input , .number-peoples input{
+.container .options .bill input, .number-peoples input {
     width: 100%;
     height: 32px;
     padding-right: 4px;
-    
+
     text-align: end;
+    text-decoration: none;
     font-weight: 700;
     font-size: 24px;
     color: var(--very-dark-cyan);
@@ -72,17 +75,55 @@ h4{
     border-radius: 6px;
 
     background: var(--very-light-grayish-cyan);
+
 }
 
-.container .options .bill .input-icone img , .number-peoples .input-icone img{
+.container .options .bill input:focus, .number-peoples input:focus {
+    box-shadow: 0 0 0 0;
+    border: 2px solid var(--strong-cyan);
+    outline: 0;
+}
 
+.container .options .bill .errorEvent {
+    border: 2px solid #ff6a5e;
+}
+
+.container .options .bill .errorEvent:focus {
+    border: 2px solid #ff6a5e;
+}
+
+.container .options .number-peoples .errorEvent {
+    border: 2px solid #ff6a5e;
+}
+
+.container .options .bill .input-icone img, .number-peoples .input-icone img {
     position: absolute;
     top: calc(50% - 8.5px);
     left: 4%;
-    
 }
 
-.container .options .bill h4 , .number-peoples h4 ,.select-tip h4{
+.container .options .bill, .number-peoples {
+    position: relative;
+}
+
+.container .options .bill h5, .number-peoples h5 {
+    color: #ff6a5e;
+    margin: 0;
+
+    position: absolute;
+    top: calc(50% - 25px);
+    right: 0;
+}
+
+.container .options .bill .hide, .number-peoples .hide {
+    visibility: hidden;
+}
+
+.container .options .bill .visib, .number-peoples .visib {
+    visibility: visible;
+}
+
+.container .options .bill h4, .number-peoples h4, .select-tip h4 {
     margin: 5px 0;
 }
 
@@ -100,19 +141,35 @@ h4{
     font-weight: 700;
 
     border: none;
-    border-radius:6px ;
+    border-radius: 6px;
 }
 
-.container .options .select-tip input[type="button"]{
-    background: var(--very-dark-cyan);
+.container .options .select-tip .tip-selection .button {
+    background-color: var(--very-dark-cyan);
     color: var(--very-light-grayish-cyan);
     cursor: pointer;
 }
 
-.container .options .select-tip input[type="number"]{
+.container .options .select-tip .tip-selection .button:hover {
+    background-color: var(--light-grayish-cyan);
+    color: var(--very-dark-cyan);
+}
+
+.container .options .select-tip .tip-selection .active {
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+}
+
+.container .options .select-tip input[type="number"] {
     text-align: center;
     color: var(--very-dark-cyan);
     background: var(--very-light-grayish-cyan);
+}
+
+.container .options .select-tip input[type="number"]:focus {
+    box-shadow: 0 0 0 0;
+    border: 2px solid var(--strong-cyan);
+    outline: 0;
 }
 
 .container .result {
@@ -123,7 +180,7 @@ h4{
 
         "amount-person result-amount-person"
         "total-person  result-total-person"
-        "reset-button reset-button" 
+        "reset-button reset-button"
     ;
 
     width: 50%;
@@ -148,36 +205,44 @@ h4{
     grid-area: result-total-person;
 }
 
+.container .result .disabled {
+    cursor: auto;
+    background: #0D686D;
+}
+
+.container .result .enabled {
+    background: var(--strong-cyan);
+    cursor: pointer;
+}
+
 .container .result .reset-button {
     grid-area: reset-button;
     margin-top: 50px;
     height: 40px;
-    cursor: pointer;
-
     border: none;
     border-radius: 5px;
-
-    background: var(--strong-cyan);
     color: var(--very-dark-cyan);
-
     font-weight: 700;
 }
 
+.container .result .enabled:hover {
+    background: var(--light-grayish-cyan);
+}
 
-.container .result .result-amount, .result-total{
-    font-size:34px ;
+.container .result .result-amount, .result-total {
+    font-size: 34px;
     font-weight: 700;
     text-align: end;
 
-    margin:0;
+    margin: 0;
 
     color: var(--strong-cyan);
 }
 
-.container .result .tip-amount-person p , .total-person p{
+.container .result .tip-amount-person p, .total-person p {
     color: var(--dark-grayish-cyan);
     margin: 0;
-} 
+}
 
 .container .result strong {
     color: var(--white);
@@ -192,26 +257,30 @@ h4{
 
 @media (max-width: 1215px) {
     .container {
-         width: 80%;
+        width: 80%;
+    }
+
+    .container .options .bill input, .number-peoples input{
+        padding-right: 10px;
     }
 }
 
 @media (max-width: 768px) {
-    .container{
-         flex-direction: column;
-         max-width: 450px;
+    .container {
+        flex-direction: column;
+        max-width: 450px;
     }
 
-    .container .options{
+    .container .options {
         width: 100%;
-        margin: 0 0 50px ;
+        margin: 0 0 50px;
     }
 
     .container .options .select-tip {
         margin: 16px 0;
     }
 
-    .container .result{
+    .container .result {
         width: 100%;
     }
 

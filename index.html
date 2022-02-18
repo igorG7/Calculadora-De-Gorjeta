@@ -1,102 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
     <title>Tip-Calculator</title>
-</head>
-<body>
+  </head>
+  <body>
     <section>
-        <div class="logotip">
+      <div class="logotip">
+        <img src="images/logo.svg" alt="" />
+      </div>
 
-             <img src="images/logo.svg" alt="">
+      <div class="container">
+        <div class="options">
+          <form>
+            <div class="bill">
+              <h4>Bill</h4>
+              <h5 id="cantbezeroB" name="cantbezero" class="hide erro">
+                Can't be zero
+              </h5>
 
-        </div>
+              <div class="input-icone">
+                <img src="images/icon-dollar.svg" alt="" />
 
-        <div class="container">
-
-            <div class="options">
-
-                <div class="bill">
-
-                    <h4>Bill</h4>
-
-                  <div class="input-icone">
-                    <img src="images/icon-dollar.svg" alt="">
-
-                    <input type="number" name="" id="">
-                  </div>
-
-                </div>
-
-                <div class="select-tip">
-
-                    <h4>Select tip %</h4>
-
-                    <div class="tip-selection">
-                        <input type="button" value="5%">
-                        <input type="button" value="10%">
-                        <input type="button" value="15%">
-                        <input type="button" value="25%">
-                        <input type="button" value="50%">
-
-                        <input placeholder="Custom" type="number" name="" id="">
-                    </div>
-                </div>
-
-                <div class="number-peoples">
-
-                    <h4>Number of Peoples</h4>
-
-                    <div class="input-icone">
-                        <img src="images/icon-person.svg" alt="">
-
-                        <input type="number" name="" id="">
-                    </div>
-                    
-                </div>
-
+                <input
+                  type="number"
+                  name="moneyValue"
+                  id="moneyValue"
+                  placeholder="0"
+                  min="0"
+                />
+              </div>
             </div>
 
-            <div class="result">
+            <div class="select-tip">
+              <h4>Select tip %</h4>
 
-                <div class="tip-amount-person">
-                    <p>
-                        <strong>
-                        Tip Amount    <br>                       
-                        </strong>
-                        /person
-                    </p>       
-                </div>
+              <div class="tip-selection">
+                <input
+                  class="button"
+                  name="percentTip"
+                  data-percent="5"
+                  type="button"
+                  value="5%"
+                />
+                <input
+                  class="button"
+                  name="percentTip"
+                  data-percent="10"
+                  type="button"
+                  value="10%"
+                />
+                <input
+                  class="button"
+                  name="percentTip"
+                  data-percent="15"
+                  type="button"
+                  value="15%"
+                />
+                <input
+                  class="button"
+                  name="percentTip"
+                  data-percent="25"
+                  type="button"
+                  value="25%"
+                />
+                <input
+                  class="button"
+                  name="percentTip"
+                  data-percent="50"
+                  type="button"
+                  value="50%"
+                />
 
-                <div class="result-amount-person">
-                    <p class="result-amount">
-                        $4.27
-                    </p>
-                </div>
-
-                <div class="total-person">
-                    <p>
-                        <strong>
-                            Total <br> 
-                        </strong>
-                        /person
-                    </p>
-                </div>
-
-                <div class="result-total-person">
-                    <p class="result-total">
-                        $34.27
-                    </p>
-                </div>
-
-                <input class="reset-button" type="button" value="RESET">
-
+                <input
+                  placeholder="Custom"
+                  data-percent="0"
+                  type="number"
+                  name="percentTip"
+                  id="custom-tip"
+                  min="0"
+                  style="background-color: #eaf1f1"
+                />
+              </div>
             </div>
 
+            <div class="number-peoples">
+              <h4>Number of Peoples</h4>
+              <h5 id="cantbezeroP" name="cantbezero" class="hide erro">
+                Can't be zero
+              </h5>
+
+              <div class="input-icone">
+                <img src="images/icon-person.svg" alt="" />
+
+                <input
+                  type="number"
+                  name="number-peoples"
+                  id="number-peoples"
+                  placeholder="0"
+                  min="0"
+                />
+              </div>
+            </div>
+          </form>
         </div>
+
+        <div class="result">
+          <div class="tip-amount-person">
+            <p>
+              <strong> Tip Amount <br /> </strong>
+              /person
+            </p>
+          </div>
+
+          <div class="result-amount-person">
+            <p id="resultAmount" class="result-amount">$0.00</p>
+          </div>
+
+          <div class="total-person">
+            <p>
+              <strong> Total <br /> </strong>
+              /person
+            </p>
+          </div>
+
+          <div class="result-total-person">
+            <p id="resultTotal" class="result-total">$0.00</p>
+          </div>
+
+          <button class="reset-button disabled" id="resetButton" disabled>
+            RESET
+          </button>
+        </div>
+      </div>
+      <script src="main.js"></script>
     </section>
-</body>
+  </body>
 </html>
