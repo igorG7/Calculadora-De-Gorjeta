@@ -294,6 +294,13 @@ h4 {
     .container {
         width: 100%;
     }
+    .container .options .bill h4, .number-peoples h4, .select-tip h4 {
+        margin: 16px 0;
+    }
+
+    .container .options .bill h5, .number-peoples h5 {
+        top: calc(60% - 25px);       
+    }
 
     .container .options .select-tip .tip-selection {
         grid-template-columns: 2fr 2fr;
