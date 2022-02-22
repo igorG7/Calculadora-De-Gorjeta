@@ -5,11 +5,15 @@ Esta aplicação é uma calculadora de gorjeta construída utilizando as tecnolo
 
 O funcionamento se dá através da coleta de dados por meio de inputs e botões disponíveis ao usuário na tela, após a coleta das informações os dados são processados e retornados em um campo específico. A seguir será exibida a tela da aplicação para desktop, tablets e smartphones.
 
+**Desktop** 
+
 ![Screenshot_3](https://user-images.githubusercontent.com/78181968/154742154-025944cf-e240-4202-9987-9071f67dbb85.png)
 
+**Tablet**
 
 ![tablet](https://user-images.githubusercontent.com/78181968/154742177-68c9f75e-2fc8-41c1-a4d5-6b676ce07780.png)
 
+**Smartphone**
 
 ![smartphone](https://user-images.githubusercontent.com/78181968/154742191-e95d2a67-6283-4276-8f81-94f5ba060559.png)
 
